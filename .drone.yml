@@ -1,0 +1,9 @@
+image: go1.2
+env:
+  - GOPATH=/var/cache/drone
+script:
+  - go build
+  - go test -cover -v
+deploy:
+  heroku:
+    app: drone-heroku-test
